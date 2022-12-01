@@ -1,6 +1,6 @@
 /**
- * @param {HTMLElement} form 
- * @param {HTMLElement} button 
+ * @param {HTMLElement} form
+ * @param {HTMLElement} button
  */
  const activateForm = (form, button) => {
     showHideForm(form, button)
@@ -38,9 +38,8 @@
   }
   
   /**
-   * Show or hide form according to classes
-   * @param {HTMLElement} form element to be shown/hidden 
-   * @param {HTMLElement} button element to be shown/hidden 
+   * @param {HTMLElement} form 
+   * @param {HTMLElement} button  
    */
   const showHideForm = (form, button) => {
     const formContainer = form.parentElement
@@ -73,6 +72,7 @@
     const cardButton = list.querySelector('.add-card')
     list.insertBefore(newCard, cardButton)
   
+    // Listen delete-button and delete card on click
     const deleteCardButton = newCard.querySelector('.delete-card')
     deleteCardButton.addEventListener('click', e => {
       const card = e.target.closest('.card')
@@ -100,15 +100,12 @@
         </button>
       </div>
       <li class="add-card">
-        <a href="#">
-          <img class="plus-icon" src="G:/udemy/WebDev/pics/plus.svg" alt="Plus sign">
-          Add another card
-        </a>
+      <p class="plus-icon">+ Add another card</p>
       </li>
       <li class="form-container hidden">
         <form action="#" class="new-card">
-          <textarea name="new-card-title" id="new-card-title" rows="3"
-          placeholder="Enter a title for this card..." class="form-input"></textarea>
+          <textarea name="new-card-title" id="new-card-title" rows="2"
+          placeholder="Type here..." class="form-input"></textarea>
           <div class="form-buttons">
             <button type="submit" class="submit">Add card</button>
             <button class="cancel">
